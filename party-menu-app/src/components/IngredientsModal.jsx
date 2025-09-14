@@ -1,6 +1,6 @@
 import React from "react";
 
-function IntegredientModal({dish,onClose}){
+function IntegredientsModal({dish,onClose}){
     if (!dish) return null;
     
     return(
@@ -10,10 +10,12 @@ function IntegredientModal({dish,onClose}){
                 <p>{dish.description}</p>
                 <h4>Ingredients:</h4>
                 <ul>
-                    {dish.ingredients.map((ing,idx) => (<li key={idx}>{ing.name} - {ing.quantity}</li>))}
+                    {dish.ingredients && dish.ingredients.map((ing,idx) => (<li key={idx}>{ing.name} - {ing.quantity}</li>))}
                 </ul>
                 <button onClick={onClose}>Close</button>
             </div>
         </div>
     );
 }
+
+export default IngredientsModal;
